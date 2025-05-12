@@ -19,6 +19,8 @@
 \RequirePackage[english]{babel}
 \RequirePackage{booktabs}
 \RequirePackage{siunitx}
+\RequirePackage{caption}
+\RequirePackage{subcaption}
 \RequirePackage[acronym]{glossaries}
 %-------------------
 %
