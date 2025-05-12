@@ -478,12 +478,12 @@ $S_c=$ \qty{0.375}{m}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\linewidth]{horizontal_curve_1}
+    \includegraphics[width=0.9\linewidth]{images/track-alignment-worksheet-vertical-curve.drawio.pdf}
     \caption{Diagram of horizontal curve worked example}
     \label{fig:hoz-cur-example}
 \end{figure}
 
-Figure \ref{fig:horizontal-curve-geometry} shows how the length of the radius is reduced by \qty{0.375}{m} at the start of the transition curve.
+Figure \ref{fig:hoz-cur-example} shows how the length of the radius is reduced by \qty{0.375}{m} at the start of the transition curve.
 
 \subsubsection*{Curve Co-ordinates}
 
@@ -496,6 +496,8 @@ To calculate the co-ordinates along the transition to a circular curve, the foll
 \begin{equation}
     y=\frac{s^3}{6 \cdot R \cdot L_{tr}}
 \end{equation}
+
+The results at 4 co-ordinates along the transition curve are shown in the table below and in figure \ref{fig:hoz-cur-example}.
 
 \begin{table}[h]
 \centering
@@ -522,7 +524,7 @@ A railway has the following design parameters:
     \item Max rate of change in cant $\Delta E=$ \qty{55}{mm/s}
 \end{itemize}
 
-Calculate the equilibrium cant, applied cant, transition length, curve offset and the $x$ \& $y$ co-ordinmates of the transition at 4 locations along its length.
+Calculate the equilibrium cant, applied cant, transition length, curve offset and the $x$ \& $y$ co-ordinates of the transition at 4 locations along its length.
 
 \begin{solution}
 \begin{equation}
@@ -581,7 +583,7 @@ A railway has the following design parameters:
     \item Max rate of change in cant $\Delta E=$ \qty{55}{mm/s}
 \end{itemize}
 
-Calculate the equilibrium cant, applied cant, transition length, curve offset and the $x$ \& $y$ co-ordinmates of the transition at 4 locations along its length.
+Calculate the equilibrium cant, applied cant, transition length, curve offset and the $x$ \& $y$ co-ordinates of the transition at 4 locations along its length.
 
 \begin{solution}
 \begin{equation}
@@ -644,8 +646,8 @@ A vertical curve is a parabolic curve between two grades on a railway. Its aim i
 \begin{tabular}{@{}llll@{}}
 \toprule
 Criteria  & Standard Limit (\unit{\meter \per \second \squared}) & Maximum Limit (\unit{\meter \per \second \squared}) & Exceptional Limit (\unit{\meter \per \second \squared}) \\ \midrule
-Freight   & 0.10                                     & 0.22                                  & 0.31                                      \\
-Passenger & 0.19                                    & 0.22                                  & 0.31                                      \\ \bottomrule
+Freight   & \num{0.10} & \num{0.22} & \num{0.31} \\
+Passenger & \num{0.19} & \num{0.22} & \num{0.31} \\ \bottomrule
 \end{tabular}
 \end{table}
 
@@ -655,24 +657,31 @@ Calculate the vertical curve between an upward gradient of \qty{1}{\percent} and
 \begin{itemize}
     \item Initial height $H_0=$ \qty{-35}{\meter}
     \item Velocity $V=$ \qty{80}{km/h}
-    \item Minimum vertical curve radius $R_{min}=$ \qty{2500}{m}
+    \item Minimum vertical curve radius $R_{(min)}=$ \qty{2500}{m}
+\end{itemize}
+
+\subsubsection*{Vertical acceleration}
+
+Using table \ref{tab:vert-acc-limits}:
+\begin{itemize}
+    \item Vertical acceleration $a_v =$ \qty{0.19}{\meter \per \second \squared}
 \end{itemize}
 
 \subsubsection*{Vertical Curve Radius}
 
-\begin{itemize}
-    \item Vertical acceleration $a_v$ \qty{0.19}{\meter \per \second \squared}
-\end{itemize}
+First, work out the length of the radius.
 
 \begin{equation}
     R_{vc}=\frac{V^2}{33.1776 \cdot a_v}=\frac{80^2}{33.1776 \cdot 0.19} = 1015
 \end{equation}
 
-However this is below the limit for Vertical Curve Radius.
+However, this is below the minimum limit for vertical curve radius, therefore.
 
 $R_{vc}=$ \qty{2500}{m}
 
 \subsubsection*{Curve Length}
+
+Next, work out the longitudinal linear length of the vertical curve.
 
 \begin{itemize}
     \item Initial gradient $G_1=$ \qty{1}{\percent}
@@ -680,12 +689,14 @@ $R_{vc}=$ \qty{2500}{m}
 \end{itemize}
 
 \begin{equation}
-    L_{vc} = \frac{R_{vc}(G_1-G_2)}{100}=\frac{2500(1--2.5)}{100}=87.5
+    L_{vc} = \frac{R_{vc}(G_1-G_2)}{100}=\frac{2500(1-(-2.5))}{100}=87.5
 \end{equation}
 
 $L_{vc}=$ \qty{87.5}{m}
 
 \subsubsection*{Intervals}
+
+Next, assume there are 5 intervals and calculate the longitudinal length between each interval.
 
 \begin{itemize}
     \item Number of intervals $N=$ \num{5}
@@ -695,6 +706,8 @@ $L_{vc}=$ \qty{87.5}{m}
     I = \frac{L_{vc}}{N} = \frac{87.5}{5} = 17.5
 \end{equation}
 
+Next, work out how far each interval is from the initial transition point.
+
 \begin{equation}
     I_n = I \cdot n
 \end{equation}
@@ -702,7 +715,7 @@ $L_{vc}=$ \qty{87.5}{m}
 For the third interval $n=3$
 
 \begin{equation}
-    I_1 = 17.5 \cdot 3 = 52.5
+    I_3 = 17.5 \cdot 3 = 52.5
 \end{equation}
 
 \begin{figure}[h]
@@ -740,7 +753,7 @@ for the first interval $n=1$
 for the second interval n=2
 
 \begin{equation}
-    O_2=\frac{(G_1-G_2) \cdot I_2^2}{200 \cdot L_{vc}} = \frac{(1--2.5) \cdot 35^2}{200 \cdot 87.5} = 0.245
+    O_2=\frac{(G_1-G_2) \cdot I_2^2}{200 \cdot L_{vc}} = \frac{(1-(-2.5)) \cdot 35^2}{200 \cdot 87.5} = 0.245
 \end{equation}
 
 \begin{figure}[h]
@@ -797,7 +810,7 @@ Calculate the $x$ and $y$ co-ordinates of a vertical curve at \num{5} intervals 
     \item Final gradient $G_2=$ \qty{0}{\percent}
     \item Initial height $H_0=$ \qty{-35}{m}
     \item Velocity $V=$ \qty{80}{km/h}
-    \item Minimum vertical curve radius $R_{min}=$ \qty{1000}{m}
+    \item Minimum vertical curve radius $R_{(min)}=$ \qty{1000}{m}
 \end{itemize}
 
 \begin{solution}
