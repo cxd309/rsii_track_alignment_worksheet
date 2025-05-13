@@ -58,15 +58,6 @@
     ItalicFont=*-LightItalic.otf,
     BoldItalicFont=*-BoldItalic.otf
 ]
-\setsansfont{Larken}[ % serif font (title page and headings)
-    Path=font/larken/,
-    Scale=1,
-    Extension = .ttf,
-    UprightFont=*-Regular,
-    BoldFont=*-Bold,
-    ItalicFont=*-Italic,
-    BoldItalicFont=*-BoldItalic
-]
 %-------------------
 %
 % Section Formatting
