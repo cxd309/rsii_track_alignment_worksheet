@@ -3,7 +3,7 @@
 
 \title{Designing Track Alignment Worksheet}
 \author{}
-\date{April 2025}
+\date{May 2025}
 
 \printanswers
 
@@ -815,7 +815,7 @@ Interval number & Interval length & Grade level & Extension & Final Height \\
 \end{tabular}
 \end{table}
 
-\subsection*{Question}
+\subsection*{Questions}
 \begin{questions}
 
 \question
@@ -876,6 +876,68 @@ Interval number & Interval length & Grade level & Extension & Final Height \\
 \num{3} & \num{15} & \num{-34.619} & \num{0.114} & \num{-34.733} \\
 \num{4} & \num{20} & \num{-34.492} & \num{0.203} & \num{-34.695} \\
 \num{5} & \num{25} & \num{-34.365} & \num{0.317} & \num{-35.683} \\ \bottomrule
+\end{tabular}
+
+\end{solution}
+
+\question
+Calculate the $x$ and $y$ co-ordinates of a vertical curve at \num{5} intervals based on the following parameters for a freight service with standard limits:
+\begin{itemize}
+    \item Initial gradient $G_1=$ \qty{1.5}{\percent}
+    \item Final gradient $G_2=$ \qty{-1}{\percent}
+    \item Initial height $H_0=$ \qty{0}{m}
+    \item Velocity $V=$ \qty{80}{km/h}
+    \item Minimum vertical curve radius $R_{(min)}=$ \qty{2000}{m}
+\end{itemize}
+
+\begin{solution}
+Using the standard limit for a passenger service, $a_v=$ \qty{0.10}{\meter \per \second \squared}
+
+\begin{equation}
+    R_{vc}=\frac{V^2}{33.1776 \cdot a_v}=\frac{80^2}{33.1776 \cdot 0.10} = 1929.012
+\end{equation}
+
+This is less than the minimum vertical curve radius so $R_{vc}=$ \qty{2000}.
+
+\begin{equation}
+    L_{vc} = \frac{R_{vc}(G_1-G_2)}{100}=\frac{2000(1.5-(-1))}{100}=50
+\end{equation}
+
+$L_{vc}=$ \qty{50}{m}
+
+\begin{equation}
+    I = \frac{L_{vc}}{N} = \frac{50}{5} = 10
+\end{equation}
+
+\begin{equation}
+    I_n = n \cdot I = 10n
+\end{equation}
+
+\begin{equation}
+    h_n = h_0 + \frac{G_1 \cdot I_n}{100}=0+\frac{1.5 \cdot 10n}{100}
+\end{equation}
+
+\begin{equation}
+    O_n = \frac{(G_1-G_2) \cdot I_n^2}{200 \cdot L_{vc}} = \frac{(1.5-(-1))\cdot (10n)^2}{200 \cdot 50}
+\end{equation}
+
+\begin{equation}
+    FH_n = h_n - O_n = 0+\frac{1.5 \cdot 10n}{100} - \frac{(1.5-(-1))\cdot (10n)^2}{200 \cdot 50}
+\end{equation}
+
+\vspace{1cm}
+
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Interval number & Interval length & Grade level & Extension & Final Height \\
+($n$) & $I$ (\unit{m}) & $h$ (\unit{m}) & $O$ (\unit{m}) & $FH$ (\unit{m}) \\
+\midrule
+\num{0} & \num{0}  & \num{0.000} & \num{0.000} & \num{0.000} \\
+\num{1} & \num{10} & \num{0.150} & \num{0.025} & \num{0.125} \\
+\num{2} & \num{20} & \num{0.300} & \num{0.100} & \num{0.200} \\
+\num{3} & \num{30} & \num{0.450} & \num{0.225} & \num{0.225} \\
+\num{4} & \num{40} & \num{0.600} & \num{0.400} & \num{0.200} \\
+\num{5} & \num{50} & \num{0.750} & \num{0.625} & \num{0.125} \\ \bottomrule
 \end{tabular}
 
 \end{solution}
